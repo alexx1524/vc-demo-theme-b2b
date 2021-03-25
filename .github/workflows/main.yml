@@ -10,10 +10,10 @@ on:
       - 'README.md'
       - 'LICENSE'
     branches:
-      [master, dev]
+      [master, dev, test]
   pull_request:
     branches:
-      [master, dev]
+      [master, dev, test]
     paths-ignore:
       - '.github/**'
       - 'docs/**'
