@@ -1,7 +1,3 @@
-<div>
-    {% for description in product.descriptions %}
-        {% if description.type == "FullReview" %}
-            {{ description.content }}
-        {% endif %}
-    {% endfor %}
+<div class="product-description rte" itemprop="description">
+    {{ product.description }}
 </div>
