@@ -4,15 +4,16 @@
 <div class="input-group">
         <input type="text" class="form-control"
         vc-integer
-        ng-init="product['{{product.id}}'].quantity = 1; unavailable = {{unavailable}} || {{sold_out}} "
+        ng-init="product['{{product.id}}'].quantity = 1; unavailable = {{unavailable}} || {{sold_out}}; canBeOrderedSeparately = {{product.can_be_ordered_separately}}"
         ng-model="product['{{product.id}}'].quantity"
         >
+
         <span class="input-group-append">
             <button class="btn btn-outline-primary border-1 rounded-0"
 
                     title="{{ 'products.general.add_to_cart' | t }}"
                     ng-click="addProductToCartById('{{ product.id }}', product['{{product.id}}'].quantity, $event)"
-                    ng-disabled="unavailable || !product['{{product.id}}'].quantity || product['{{product.id}}'].quantity <=0"
+                    ng-disabled="unavailable || !product['{{product.id}}'].quantity || product['{{product.id}}'].quantity <=0 || !canBeOrderedSeparately"
                     >
                         {% if unavailable %}
                             {{ 'products.product.unavailable' | t }}
