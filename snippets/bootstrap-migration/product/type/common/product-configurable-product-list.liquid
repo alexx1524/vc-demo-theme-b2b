@@ -1,0 +1,10 @@
+<div>
+    {% for p in product.configurable_products %}
+        {% assign name = p.properties['DisplayName'].value %}
+        {% if name != null and name != "" %}
+            <a href="{{ p.url }}">{{ name }}</a>
+        {% else %}
+            <a href="{{ p.url }}">{{ p.title }}</a>
+        {% endif %}
+    {% endfor %}
+</div>
