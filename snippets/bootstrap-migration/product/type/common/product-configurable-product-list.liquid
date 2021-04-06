@@ -2,9 +2,9 @@
     {% for p in product.configurable_products %}
         {% assign name = p.properties['DisplayName'].value %}
         {% if name != null and name != "" %}
-            <a href="{{ p.url }}">{{ name }}</a>
+            <a href="{{ p.url }}">{{ name }}</a> <br>
         {% else %}
-            <a href="{{ p.url }}">{{ p.title }}</a>
+            <a href="{{ p.url }}">{{ p.title }}</a> <br>
         {% endif %}
     {% endfor %}
 </div>
