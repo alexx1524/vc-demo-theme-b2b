@@ -1,6 +1,6 @@
 <div>
     {% for description in product.descriptions %}
-        {% if description.type == "FullReview" %}
+        {% if description.review_type == "FullReview" %}
             {{ description.content }}
         {% endif %}
     {% endfor %}
