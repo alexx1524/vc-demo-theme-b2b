@@ -8,8 +8,8 @@
 
     <div class="col-md-6 mb-3 mb-md-0">
         {% if product.properties.size > 0 %}
-            {% include 'bootstrap-migration/product/type/common/product-properties' %}
             {% include 'bootstrap-migration/product/type/common/product-description' %}
+            {% include 'bootstrap-migration/product/type/common/product-properties' %}
         {% endif %}
         {% include 'bootstrap-migration/product/product-configuration-list' %}
     </div>
