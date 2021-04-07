@@ -1,0 +1,32 @@
+{% if product.configurable_products != null and product.configurable_products.size > 0 %}
+    <div class="card mt-3">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="h4">{{ 'configurable_product.title' | t }}</span>
+                </div>
+            </div>
+        </div>
+
+        {% for p in product.configurable_products %}
+            {% assign name = p.properties['DisplayName'].value %}
+            <div ng-class="!$last && 'border-bottom border-gray-200'" class="card-body d-flex panel-body align-items-center">
+                <div class="col-md-2">
+                    {% if p.primary_image.url != null and p.primary_image.url != "" %}
+                        <img class="img-fluid" onerror='this.onerror=null; this.src="{{ 'no-image.svg' | asset_url }}"' width="48" height="48" src="{{ p.primary_image.url }}" />
+                    {% else %}
+                        <img alt="{% raw %}{{ part.name }}{% endraw %}" width="48" height="48" ng-src="{{ 'no-image.svg' | asset_url }}" />
+                    {% endif %}
+                </div>
+
+                <div class="col-md-8 d-flex flex-column">
+                    {% if name != null and name != "" %}
+                        <a href="{{ p.url }}" class="font-weight-bold">{{ name }}</a>
+                    {% else %}
+                        <a href="{{ p.url }}" class="font-weight-bold">{{ p.title }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
