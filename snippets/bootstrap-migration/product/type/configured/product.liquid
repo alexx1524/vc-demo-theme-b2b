@@ -1,5 +1,5 @@
 {% include 'bootstrap-migration/product/type/common/product-title-info' %}
-<div class="row" ng-init="showPricesWithTaxes = {{settings.show_prices_with_taxes}}">
+<div class="row" ng-init="showPricesWithTaxes = {{ settings.show_prices_with_taxes }}; isFlatConfigurationList = {{ settings.product_configuration_flat_list }}">
     <div class="col-md-3 mb-3 mb-md-0">
         {% include 'bootstrap-migration/product/image' %}
         {% include 'bootstrap-migration/product/compare' %}
@@ -11,7 +11,12 @@
             {% include 'bootstrap-migration/product/type/common/product-description' %}
             {% include 'bootstrap-migration/product/type/common/product-properties' %}
         {% endif %}
-        {% include 'bootstrap-migration/product/product-configuration-list' %}
+
+        {% if settings.product_configuration_flat_list %}
+            {% include 'bootstrap-migration/product/product-configuration-flat-list' %}
+        {% else %}
+            {% include 'bootstrap-migration/product/product-configuration-list' %}
+        {% endif %}
     </div>
 
     <div class="col-md-3 mb-3 mb-md-0">

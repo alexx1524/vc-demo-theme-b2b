@@ -1,0 +1,49 @@
+{% if product.product_type == "Configurable" %}
+    <div class="card mt-3" ng-if="productParts && productParts.length">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="h4">Customize your configuration</span>
+                </div>
+            </div>
+        </div>
+
+        <ul ng-repeat="part in productParts" ng-if="part.items.length" class="list-group list-group-flush border-bottom-0">
+            <li ng-repeat="item in part.items" class="list-group-item mt-2">
+                <div class="custom-control custom-checkbox border-primary float-left">
+                    <input ng-if="part.name.toLowerCase() == 'contained'"
+                           ng-click="changeAdditionalItem(item, $event)"
+                           name="{% raw %}{{ part.name }}{% endraw %}"
+                           id="{% raw %}{{ item.id }}{% endraw %}"
+                           class="custom-control-input"
+                           type="checkbox"
+                           disabled
+                           checked>
+
+                    <input ng-if="part.name.toLowerCase() == 'preselected'"
+                           ng-click="changeAdditionalItem(item, $event)"
+                           name="{% raw %}{{ part.name }}{% endraw %}"
+                           id="{% raw %}{{ item.id }}{% endraw %}"
+                           ng-value="true"
+                           class="custom-control-input"
+                           type="checkbox"
+                           checked>
+
+                    <input ng-if="part.name.toLowerCase() == 'optional'"
+                           ng-click="changeAdditionalItem(item, $event)"
+                           name="{% raw %}{{ part.name }}{% endraw %}"
+                           id="{% raw %}{{ item.id }}{% endraw %}"
+                           ng-value="false"
+                           class="custom-control-input"
+                           type="checkbox">
+
+                    <label class="custom-control-label pl-2" for="{% raw %}{{ item.id }}{% endraw %}">
+                        <span class="d-block mt-n2">{% raw %}{{ item.name }}{% endraw %}</span>
+                        <span class="d-block small text-muted">{% raw %}{{ part.name }}{% endraw %}</span>
+                    </label>
+                </div>
+                <div class="float-right">{% raw %}{{ item.price.actualPrice.formattedAmount }}{% endraw %}</div>
+            </li>
+        </ul>
+    </div>
+{% endif %}

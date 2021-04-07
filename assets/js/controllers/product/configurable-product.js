@@ -8,16 +8,16 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
 
         $scope.addSelectedProductsToCart = function() {
             const configuredProductId = $window.product.id;
-            const products = $scope.productParts.map(part => {
-                return part.items.find(item => item.id === part.selectedItemId);
-            });
-            const inventoryError = products.some(product => product.availableQuantity < $scope.configurationQty);
+            const products = $scope.isFlatConfigurationList
+                ? $scope.defaultProductParts
+                : $scope.productParts.map((part) => part.items.find((item) => item.id === part.selectedItemId));
+            const inventoryError = products.some(product => product.trackInventory && product.availableQuantity < $scope.configurationQty);
             const dialogData = toDialogDataModel(products, $scope.configurationQty, inventoryError, configuredProductId);
             dialogService.showDialog(dialogData, 'recentlyAddedCartItemDialogController', 'storefront.recently-added-cart-item-dialog.tpl', 'lg');
 
             if (!inventoryError) {
-                const items = $scope.productParts.map(value => {
-                    return { id: value.selectedItemId, quantity: $scope.configurationQty, configuredProductId: configuredProductId };
+                const items = products.map((item) => {
+                    return { id: item.id, quantity: $scope.configurationQty, configuredProductId: configuredProductId };
                 });
 
                 cartService.addLineItems(items).then(response => {
@@ -36,6 +36,19 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
                 $scope.productParts[foundIndex].selectedItemId = id;
                 recalculateTotals();
             });
+        };
+
+        $scope.changeAdditionalItem = function (product, event) {
+            const wasSelected = event.target.checked;
+            const index = $scope.defaultProductParts.indexOf(product);
+
+            if (wasSelected) {
+                index < 0 && $scope.defaultProductParts.push(product);
+            } else {
+                index > -1 && $scope.defaultProductParts.splice(index, 1);
+            }
+
+            recalculateTotals();
         };
 
         $scope.getSelectedItem = function(configPart) {
@@ -89,11 +102,12 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
               return;
           }
           catalogService.getProduct([product.id]).then(response => {
-              let defaultPartsTotalsObject = [];
               product = response.data[0];
               $scope.selectedVariation = product;
               $scope.productParts = response.data[0].parts;
-              $scope.defaultProductParts = [];
+              $scope.defaultProductParts = $scope.isFlatConfigurationList
+                  ? [product] // adding the main product
+                  : [];
 
               if ($scope.productParts.length) {
                 _.each($scope.productParts, part => {
@@ -101,9 +115,15 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
                     $scope.isProductUnavailable = true;
                     return;
                   }
-                  $scope.defaultProductParts.push(part.items.find(x => x.id === part.selectedItemId));
-                  defaultPartsTotalsObject.push({id: part.items.find(x => x.id === part.selectedItemId).id, quantity: 1});
+
+                  if (!$scope.isFlatConfigurationList) {
+                      $scope.defaultProductParts.push(part.items.find((item) => item.id === part.selectedItemId));
+                  } else if (['contained', 'preselected'].includes(part.name.toLowerCase())) {
+                      $scope.defaultProductParts = $scope.defaultProductParts.concat(part.items);
+                  }
                 });
+
+                const defaultPartsTotalsObject = $scope.defaultProductParts.map((item) => ({ id: item.id, quantity: 1 }));
 
                 if (!$scope.isProductUnavailable) {
                   pricingService.getProductsTotal(defaultPartsTotalsObject).then(result => {
@@ -125,10 +145,10 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
         }
 
         function recalculateTotals() {
-            let selectedProductParts = [];
-            _.each($scope.productParts, part => {
-              selectedProductParts.push({id: part.items.find(x => x.id === part.selectedItemId).id, quantity: 1});
-            });
+            const selectedProductParts = $scope.isFlatConfigurationList
+                ? $scope.defaultProductParts.map((item) => ({ id: item.id, quantity: 1 }))
+                : $scope.productParts.map((part) => ({ id: part.items.find((item) => item.id === part.selectedItemId).id, quantity: 1 }));
+
             pricingService.getProductsTotal(selectedProductParts).then(result => {
               $scope.updatedTotal = $scope.showPricesWithTaxes ? result.data.totalWithTax.amount : result.data.total.amount;
               $scope.totalDifference = Math.abs($scope.updatedTotal - $scope.defaultPrice);

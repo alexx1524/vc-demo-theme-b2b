@@ -184,7 +184,8 @@
                         "type": "wishlist"
                     }
                 ]
-            }
+            },
+            "product_configuration_flat_list": true
         }
     }
 }

@@ -55,12 +55,12 @@ $box-shadow: .0625rem .25rem .625rem rgba($black, .15);
 $box-shadow-lg: .0625rem .5rem .9375rem rgba($black, .15);
 
 $input-bg: $body-bg;
-$input-bg-checked: $secondary;
+//$input-bg-checked: $secondary;
 $input-border-radius: 0;
 $input-border-radius-sm: 0;
 $input-border-radius-lg: 0;
-$input-focus-border-color: $secondary;
-$input-border-checked: $secondary;
+//$input-focus-border-color: $secondary;
+//$input-border-checked: $secondary;
 $input-padding-y: 0.438rem;
 $input-padding-x: 0.938rem;
 
@@ -79,9 +79,9 @@ $custom-control-indicator-size: 1.2rem;
 $custom-control-indicator-bg-size: 45% 35%;
 $custom-control-indicator-border-width: 2px;
 $custom-control-indicator-border-color: $gray-400;
-$custom-control-indicator-checked-bg: $secondary;
-$custom-control-indicator-checked-border-color: $secondary;
-$custom-control-indicator-focus-box-shadow: $secondary;
+//$custom-control-indicator-checked-bg: $secondary;
+//$custom-control-indicator-checked-border-color: $secondary;
+//$custom-control-indicator-focus-box-shadow: $secondary;
 $custom-control-margin-bottom: $spacer / 2;
 
 $custom-checkbox-indicator-border-radius: 0;
