@@ -1,8 +1,8 @@
 <div class="card mb-3">
-    <div class="card-header border-bottom-0 text-condensed font-weight-bold">
-        <h4 class="card-title mb-0">{{ 'collections.general.availability' | t }}</h4>
+    <div class="card-header border-bottom-0 bg-transparent font-weight-bold">
+        <h4 class="card-title text-primary mb-0">{{ 'collections.general.availability' | t }}</h4>
     </div>
-    <div class="card-body">
+    <div class="card-body pt-0">
         <div ng-include="$ctrl.fulfillmentCenter ? 'selected-branch' : 'unselected-branch'"></div>
     </div>
 </div>
@@ -27,7 +27,7 @@
             <input type="checkbox"
                    class="custom-control-input"
                    ng-checked="$ctrl.filters.terms.available_in">
-            <a class="custom-control-label d-inline-block text-body"
+            <a class="custom-control-label d-inline-block text-body text-decoration-none"
                vc-query-source="{ terms: { 'available_in': [$ctrl.fulfillmentCenter.id] } }"
                switchable="true">
                 In stock now at your branch

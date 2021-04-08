@@ -20,14 +20,14 @@
                               </div>
                         </div>
                         <div class="form-group" ng-include="step1TemplateUrl"></div>
-                        <input type="submit" ng-click="step1Form.$submitted = true" class="btn btn-primary pull-right" wz-next value="Continue" />
+                        <input type="submit" ng-click="step1Form.$submitted = true" class="btn btn-secondary pull-right" wz-next value="Continue" />
                     </wz-step>
                 </form>
                 <form name="step2Form" novalidate ng-class="{'ng-submitted': step2Form.$submitted}">
                     <wz-step wz-title="{{ 'customer.register.step_address' | t }}" canexit="step2Form.$valid">
                         <h1>{{ 'customer.register.step_address' | t }}</h1>
                         <div class="form-group" ng-include="step2TemplateUrl"></div>
-                        <input type="submit" class="btn btn-primary pull-right" wz-next ng-click="step2Form.$submitted = true" value="Continue" />
+                        <input type="submit" class="btn btn-secondary pull-right" wz-next ng-click="step2Form.$submitted = true" value="Continue" />
                         <input type="submit" class="btn btn-outline-dark" wz-previous value="Back" />
                     </wz-step>
                 </form>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input class="btn btn-primary pull-right" wz-finish type="submit" value="Submit" ng-disabled="step3Form.$invalid" ng-click="step3Form.$submitted = true" />
+                        <input class="btn btn-secondary pull-right" wz-finish type="submit" value="Submit" ng-disabled="step3Form.$invalid" ng-click="step3Form.$submitted = true" />
                         <input class="btn btn-outline-dark" wz-previous value="Back" />
                     </wz-step>
                 </form>

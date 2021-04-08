@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    <link rel="icon" href="{{ 'cropped-favicon-32x32.png' | asset_url }}" sizes="32x32" />
+    <link rel="icon" href="{{ 'cropped-favicon-192x192.png' | asset_url }}" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="{{ 'cropped-favicon-180x180.png' | asset_url }}" />
+    <meta name="msapplication-TileImage" content="{{ 'cropped-favicon-270x270.png' | asset_url }}" />
+
     {% if template == "json-page" or template == "json-preview" %}
         <base href="{{ "" | full_url }}">
     {% endif %}

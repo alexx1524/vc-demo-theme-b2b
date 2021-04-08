@@ -36,7 +36,7 @@
                                 <input type="checkbox"
                                        class="custom-control-input"
                                        ng-checked="{{ tag_checked }}">
-                                <a class="custom-control-label d-inline-block text-body"
+                                <a class="custom-control-label d-inline-block text-body text-decoration-none"
                                     vc-query-source="{ terms: { '{{ aggregation.field }}': ['{{ custom_tag.value }}'] } }"
                                     switchable="true">
                                     {{ tag_label }} <span class="count">({{ custom_tag.count }})</span>
@@ -52,15 +52,14 @@
     <script type="text/ng-template"
             id="collection-sidebar-default-group.html">
         <div id="{{::headingId}}"
-             class="card-header border-bottom-0"
+             class="card-header border-bottom-0 bg-transparent"
              role="tab"
              aria-selected="{{isOpen}}"
              ng-keypress="toggleOpen($event)">
             <h4 class="card-title mb-0">
-                <a class="accordion-toggle text-body text-condensed font-weight-bold"
+                <span class="accordion-toggle text-primary font-weight-bold"
                    role="button"
                    data-toggle="collapse"
-                   href=""
                    aria-expanded="{{isOpen}}"
                    aria-controls="{{::cardId}}"
                    tabindex="0"
@@ -74,7 +73,7 @@
                        ng-class="{'fa-chevron-down': isOpen, 'fa-chevron-right': !isOpen}"
                        aria-hidden="true">
                     </i>
-                </a>
+                </span>
             </h4>
         </div>
         <div id="{{::cardId}}"
@@ -83,7 +82,7 @@
              aria-labelledby="{{::headingId}}"
              aria-hidden="{{!isOpen}}"
              uib-collapse="!isOpen">
-            <div class="card-body"
+            <div class="card-body pt-0"
                  ng-transclude>
             </div>
         </div>

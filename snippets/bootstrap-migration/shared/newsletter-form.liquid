@@ -6,7 +6,7 @@
     <div class="input-group">
         <input type="email" id="mail" class="form-control" value="{% raw %}{{ customer ? customer.email : null }}{% endraw %}" placeholder="{{ 'blogs.newsletter.email_placeholder' | t }}" name="EMAIL" aria-label="{{ 'blogs.newsletter.email_placeholder' | t }}" autocorrect="off" autocapitalize="off">
         <div class="input-group-append">
-            <input type="submit" id="subscribe" class="btn btn-primary rounded-0" value="{{ 'blogs.newsletter.sign_up' | t }}" name="subscribe">
+            <input type="submit" id="subscribe" class="btn btn-secondary rounded-0" value="{{ 'blogs.newsletter.sign_up' | t }}" name="subscribe">
         </div>
     </div>
 </form>

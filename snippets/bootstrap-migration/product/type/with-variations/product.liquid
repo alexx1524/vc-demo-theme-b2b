@@ -8,7 +8,7 @@
 
     <div class="col-md-6 mb-3 mb-md-0">
         {% if product.properties.size > 0 %}
-            {% include 'bootstrap-migration/product/type/common/product-description' %}        
+            {% include 'bootstrap-migration/product/type/common/product-description' %}
             {% include 'bootstrap-migration/product/type/common/product-properties' %}
             {% include 'bootstrap-migration/product/type/common/product-configurable-product-list' %}
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="delivery-cart m-3">
-                        <button class="btn btn-lg btn-primary btn-block"
+                        <button class="btn btn-lg btn-secondary btn-block"
                         title="{{ 'products.general.add_to_cart' | t }}"
                         ng-click="addVariationsToCart()"
                         ng-disabled = "!hasVariationsWithQuantity()">

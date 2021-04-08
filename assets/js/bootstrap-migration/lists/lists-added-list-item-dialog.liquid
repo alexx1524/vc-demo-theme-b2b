@@ -25,7 +25,7 @@
             <button class="btn btn-dark">
                 <span ng-click="close()">{{ 'wishlist.general.cancel' | t }}</span>
             </button>
-            <button ng-disabled="selectedList.contains || inProgress || !selectedList.name" class="btn btn-primary" ng-click="addProductToList()">
+            <button ng-disabled="selectedList.contains || inProgress || !selectedList.name" class="btn btn-secondary" ng-click="addProductToList()">
                 <span>{{ 'wishlist.general.add_to_list' | t }}</span>
             </button>
         </div>
@@ -53,8 +53,8 @@
             </tr>
         </table>
         <div class="modal-footer">
-            <button ng-click="close()" class="btn btn-outline-primary">{{ 'wishlist.general.continue_shopping' | t }}</button>
-            <button ng-click="redirect('{{ 'account#/lists/' | absolute_url }}')" class="btn btn-primary">{{ 'wishlist.general.view_your_list' | t }}</button>
+            <button ng-click="close()" class="btn btn-outline-secondary">{{ 'wishlist.general.continue_shopping' | t }}</button>
+            <button ng-click="redirect('{{ 'account#/lists/' | absolute_url }}')" class="btn btn-secondary">{{ 'wishlist.general.view_your_list' | t }}</button>
         </div>
     </div>
 

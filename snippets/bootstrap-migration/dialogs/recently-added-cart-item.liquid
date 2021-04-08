@@ -66,11 +66,11 @@
         </div>
         <div ng-if="dialogData.inventoryError" class="modal-footer d-flex justify-content-between">
             <button type="button" class="btn btn-outline-dark" ng-click="close()">{{ 'cart.general.cancel' | t }}</button>
-            <button ng-disabled="addToCartForm.$invalid" type="button" class="btn btn-primary" ng-click="addToCart()">{{ 'cart.general.confirm' | t }}</button>
+            <button ng-disabled="addToCartForm.$invalid" type="button" class="btn btn-secondary" ng-click="addToCart()">{{ 'cart.general.confirm' | t }}</button>
         </div>
         <div ng-if="!dialogData.inventoryError" class="modal-footer">
-            <button type="button" class="btn btn-outline-primary" ng-click="close()">{{ 'cart.general.continue_shopping' | t }}</button>
-            <button type="button" class="btn btn-primary" ng-click="redirect('{{ 'cart' | absolute_url }}')">{{ 'cart.general.view_cart' | t }}</button>
+            <button type="button" class="btn btn-outline-secondary" ng-click="close()">{{ 'cart.general.continue_shopping' | t }}</button>
+            <button type="button" class="btn btn-secondary" ng-click="redirect('{{ 'cart' | absolute_url }}')">{{ 'cart.general.view_cart' | t }}</button>
         </div>
     </form>
 </script>

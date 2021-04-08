@@ -1,4 +1,4 @@
-<nav class="navbar-dark bg-gray-900" role="navigation">
+<nav class="navbar-light bg-primary py-1" role="navigation">
     <div class="container">
         <div class="row no-gutters">
             {% include 'bootstrap-migration/main/header/nav/top-level-collections' %}
@@ -10,7 +10,11 @@
                     {% assign dropdown = true %}
                     {% include 'bootstrap-migration/main/header/nav/bulk-order-form' %}
                 {% endif %}
-                {% include 'bootstrap-migration/main/header/shared/cart' %}
+                <li class="nav-item">
+                    <a class="text-uppercase nav-link p-3 font-weight-bold text-condensed text-white" href="{{ 'cart' | absolute_url }}" ng-controller="cartBarController">
+                        <i class="fa fa-shopping-cart"></i>&ensp;{{ 'layout.cart.cart' | t }}&nbsp;<span ng-if="cartItemsCount > 0" ng-cloak>(<span ng-bind="cartItemsCount"></span>)</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

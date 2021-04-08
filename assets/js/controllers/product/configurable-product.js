@@ -42,10 +42,10 @@ storefrontApp.controller('configurableProductController', ['$rootScope', '$scope
             const wasSelected = event.target.checked;
             const index = $scope.defaultProductParts.indexOf(product);
 
-            if (wasSelected) {
-                index < 0 && $scope.defaultProductParts.push(product);
-            } else {
-                index > -1 && $scope.defaultProductParts.splice(index, 1);
+            if (wasSelected && index === -1) {
+                $scope.defaultProductParts.push(product);
+            } else if (!wasSelected && index > -1) {
+                $scope.defaultProductParts.splice(index, 1);
             }
 
             recalculateTotals();

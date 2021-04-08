@@ -1,14 +1,14 @@
-﻿<nav class="navbar navbar-dark bg-dark d-block d-md-none p-0" role="navigation">
+﻿<nav class="navbar d-block d-md-none p-0" role="navigation">
     <div class="container-fluid">
         <div itemscope itemtype="http://schema.org/Organization">
             {% include 'bootstrap-migration/main/header/links/brand' %}
         </div>
         <ul class="nav" ng-cloak>
             <li ng-if="customer && !customer.isRegisteredUser" class="nav-item">
-                {{ 'layout.customer.sign_in' | t | customer_login_link | replace: 'href', 'class="text-uppercase nav-link p-3 text-condensed text-white" href' | replace: '">', '"><i class="fa fa-sign-in"></i>&ensp;' }}
+                {{ 'layout.customer.sign_in' | t | customer_login_link | replace: 'href', 'class="text-uppercase nav-link p-3 text-condensed" href' | replace: '">', '"><i class="fa fa-sign-in"></i>&ensp;' }}
             </li>
             <li class="dropdown nav-item" uib-dropdown ng-if="customer && customer.isRegisteredUser">
-                <a id="account-dropdown" class="text-uppercase nav-link p-3 text-condensed text-white" href="" uib-dropdown-toggle><i class="fa fa-user text-primary"></i>&ensp;{{ 'layout.customer.account' | t }}&ensp;<i class="fa fa-angle-down text-primary"></i></a>
+                <a id="account-dropdown" class="text-uppercase nav-link p-3 text-condensed" href="" uib-dropdown-toggle><i class="fa fa-user text-primary"></i>&ensp;{{ 'layout.customer.account' | t }}&ensp;<i class="fa fa-angle-down text-primary"></i></a>
                 <ul class="dropdown-menu" role="menu" uib-dropdown-menu aria-labelledby="account-dropdown">
                     <li class="dropdown-item">
                         <a href="{{ 'account' | absolute_url }}" class="text-body">
@@ -20,11 +20,15 @@
                     </li>
                 </ul>
             </li>
-            {% include 'bootstrap-migration/main/header/shared/cart' %}
+            <li class="nav-item">
+                <a class="text-uppercase nav-link p-3 text-condensed" href="{{ 'cart' | absolute_url }}" ng-controller="cartBarController">
+                    <i class="fa fa-shopping-cart"></i>&ensp;{{ 'layout.cart.cart' | t }}&nbsp;<span ng-if="cartItemsCount > 0" ng-cloak>(<span ng-bind="cartItemsCount"></span>)</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
-<nav class="navbar d-block d-md-none p-0" role="navigation">
+<nav class="navbar bg-primary d-block d-md-none" role="navigation">
     <div class="flex-grow-1">
         {% include 'bootstrap-migration/shared/search-bar' %}
     </div>
