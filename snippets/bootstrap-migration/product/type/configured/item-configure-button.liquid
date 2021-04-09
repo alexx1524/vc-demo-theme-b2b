@@ -1,5 +1,5 @@
 <a href="{{ product_url | append: '?resp_group=' | append: response_group }}">
-    <button class="btn btn-outline-primary border-1 rounded-0 d-block w-100"
+    <button class="btn btn-outline-secondary border-1 rounded-0 d-block w-100"
     {% if unavailable or sold_out %} disabled {% endif %}
     title="Configure product">
         {% if unavailable %}

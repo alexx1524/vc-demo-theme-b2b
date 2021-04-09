@@ -13,8 +13,8 @@
                 <div class="custom-control custom-checkbox border-primary float-left">
                     <input ng-if="part.name.toLowerCase() == 'contained'"
                            ng-click="changeAdditionalItem(item, $event)"
-                           name="{% raw %}{{ part.name }}{% endraw %}"
-                           id="{% raw %}{{ item.id }}{% endraw %}"
+                           name="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
+                           id="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
                            class="custom-control-input"
                            type="checkbox"
                            disabled
@@ -22,22 +22,20 @@
 
                     <input ng-if="part.name.toLowerCase() == 'preselected'"
                            ng-click="changeAdditionalItem(item, $event)"
-                           name="{% raw %}{{ part.name }}{% endraw %}"
-                           id="{% raw %}{{ item.id }}{% endraw %}"
-                           ng-value="true"
+                           name="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
+                           id="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
                            class="custom-control-input"
                            type="checkbox"
                            checked>
 
                     <input ng-if="part.name.toLowerCase() == 'optional'"
                            ng-click="changeAdditionalItem(item, $event)"
-                           name="{% raw %}{{ part.name }}{% endraw %}"
-                           id="{% raw %}{{ item.id }}{% endraw %}"
-                           ng-value="false"
+                           name="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
+                           id="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}"
                            class="custom-control-input"
                            type="checkbox">
 
-                    <label class="custom-control-label pl-2" for="{% raw %}{{ item.id }}{% endraw %}">
+                    <label class="custom-control-label pl-2" for="{% raw %}{{ part.name }}-{{ item.id }}{% endraw %}">
                         <span class="d-block mt-n2">{% raw %}{{ item.name }}{% endraw %}</span>
                         <span class="d-block small text-muted">{% raw %}{{ part.name }}{% endraw %}</span>
                     </label>

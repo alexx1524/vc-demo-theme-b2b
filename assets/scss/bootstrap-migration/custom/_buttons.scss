@@ -14,6 +14,55 @@
   }
 }
 
+.btn-secondary:hover {
+  background-color: #69be50;
+  border-color: darken(#69be50, 2.5%);
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  background-color: #368b1d;
+  border-color: darken(#368b1d, 2%);
+}
+
+.btn-outline-secondary:hover {
+  color: $black;
+  background-color: #daefd3;
+  border-color: #69be50;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-secondary.dropdown-toggle {
+  color: $black;
+  background-color: transparent;
+  border-color: #368b1d;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: $black;
+    text-transform: capitalize !important;
+  }
+}
+
+.btn {
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $gray-400;
+      border-color: $gray-500;
+      color: $white;
+      cursor: default;
+    }
+  }
+}
+
 .btn-xs {
   @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-line-height-xs, $btn-border-radius-xs);
 }

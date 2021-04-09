@@ -29,11 +29,11 @@
 
         {% if template != 'customers/login' %}
         <div class="row">
-            <div class="col-6 col-md-5">
-                <input type="submit" class="btn btn-primary btn-block" value="{{ 'customer.sign_in.sign_in' | t }}">
+            <div class="col">
+                <input type="submit" class="btn btn-secondary btn-block" value="{{ 'customer.sign_in.sign_in' | t }}">
             </div>
-            <div class="col-6 col-md-5">
-                {{ 'layout.customer.register' | t | customer_register_link | replace: 'a href', 'a class="btn btn-outline-primary btn-block" href' }}
+            <div class="col">
+                {{ 'layout.customer.register' | t | customer_register_link | replace: 'a href', 'a class="btn btn-outline-secondary btn-block" href' }}
             </div>
         </div>
         {% else %}
@@ -41,7 +41,7 @@
             {% include 'bootstrap-migration/customers/forgot-links' %}
         </div>
         <div>
-            <input type="submit" class="btn btn-primary w-50" value="{{ 'customer.sign_in.continue' | t }}">
+            <input type="submit" class="btn btn-secondary w-50" value="{{ 'customer.sign_in.continue' | t }}">
         </div>
         {% endif %}
     </fieldset>

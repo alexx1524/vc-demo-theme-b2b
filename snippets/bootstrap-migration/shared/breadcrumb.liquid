@@ -1,7 +1,9 @@
 {% unless template == 'index' or template == 'cart' %}
-    <ol class="pull-left breadcrumb" role="navigation" aria-label="breadcrumb">
+    <ol class="pull-left breadcrumb pl-0" role="navigation" aria-label="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{ "" | absolute_url }}" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+            <a href="{{ "" | absolute_url }}" class="text-dark text-decoration-none" title="{{ 'general.breadcrumbs.home_link_title' | t }}">
+                <i class="fa fa-lg fa-home text-primary" aria-hidden="true"></i>
+            </a>
         </li>
         {% if template contains 'vendor' %}
             <li class="breadcrumb-item active">{{ vendor.url }}</li>
@@ -9,16 +11,20 @@
             {% if collection %}
                 {% for parent in collection.parents %}
                     <li class="breadcrumb-item">
-                        {% capture url %}{{ parent.handle | absolute_url }}{% endcapture %}
-                        {{ parent.title | link_to: url }}
+                        <a href="{{ parent.handle | absolute_url }}" class="text-dark text-decoration-none">
+                            {{ parent.title }}
+                        </a>
                     </li>
                 {% endfor %}
             {% endif %}
             <li class="breadcrumb-item active">{{ product.title }}</li>
         {% elsif template contains 'collection' and collection.handle %}
             {% if current_tags %}
-                {% capture url %}{{ collection.handle | absolute_url }}{% endcapture %}
-                <li class="breadcrumb-item">{{ collection.title | link_to: url }}</li>
+                <li class="breadcrumb-item">
+                    <a href="{{ collection.handle | absolute_url }}" class="text-dark text-decoration-none">
+                        {{ collection.title }}
+                    </a>
+                </li>
                 {% comment %}
                     Loop through tags and our custom tag array to strip out prepended tag categories if they exist.
                     snippet/advanced-tag-loop.liquid is required for this to work.
@@ -59,8 +65,9 @@
                             </li>
                         {% else %}
                             <li class="breadcrumb-item">
-                                {% capture url %}{{ parent.handle | absolute_url }}{% endcapture %}
-                                {{ parent.title | link_to: url }}
+                                <a href="{{ parent.handle | absolute_url }}" class="text-dark text-decoration-none">
+                                    {{ parent.title }}
+                                </a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -68,15 +75,21 @@
             {% endif %}
         {% elsif template == 'blog' %}
             {% if current_tags %}
-                {% assign blog_url = blog.url | absolute_url %}
-                <li class="breadcrumb-item">{{ blog.title | link_to: blog_url }}</li>
+                <li class="breadcrumb-item">
+                    <a href="{{ blog.url | absolute_url }}" class="text-dark text-decoration-none">
+                        {{ blog.title }}
+                    </a>
+                </li>
                 <li class="breadcrumb-item active">{{ current_tags | join: "&nbsp;+&nbsp;" }}</li>
             {% else %}
                 <li class="breadcrumb-item active">{{ blog.title }}</li>
             {% endif %}
         {% elsif template == 'article' %}
-            {% assign blog_url = blog.url | absolute_url %}
-            <li class="breadcrumb-item">{{ blog.title | link_to: blog_url }}</li>
+            <li class="breadcrumb-item">
+                <a href="{{ blog.url | absolute_url }}" class="text-dark text-decoration-none">
+                    {{ blog.title }}
+                </a>
+            </li>
             <li class="breadcrumb-item active">{{ article.title }}</li>
         {% elsif template contains 'page' %}
             <li class="breadcrumb-item active">{{ page.title }}</li>
