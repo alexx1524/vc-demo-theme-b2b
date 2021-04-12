@@ -91,7 +91,7 @@
                                     </td>
                                     <td>
                                         <button type="button" name="add" id="addToCart" class="btn btn-primary"
-                                                ng-click="$ctrl.accountLists.addToCart(lineItem)" ng-disabled="!$ctrl.canBeAddedToCart(lineItem)">
+                                                ng-click="$ctrl.accountLists.addToCart(lineItem)" ng-disabled="!$ctrl.canBeAddedToCart(lineItem) || !lineItem.product.canBeOrderedSeparately">
                                             <span class="icon icon-cart"></span>
                                             <span id="addToCartText" ng-if="!lineItem.product.isBuyable">{{ 'products.product.unavailable' | t }}</span>
                                             <span id="addToCartText" ng-if="lineItem.product.isBuyable && !lineItem.product.isInStock">{{ 'products.product.sold_out' | t }}</span>
