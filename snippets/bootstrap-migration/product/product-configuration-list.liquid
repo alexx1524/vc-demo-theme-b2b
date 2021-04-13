@@ -40,11 +40,11 @@
                 </div>
             </div>
             <div class="col-2">
-                <img ng-if="item.primaryImage.url" alt="{% raw %}{{ item.name }}{% endraw %}" class="img-fluid border-0 p-0" ng-src="{% raw %}{{ item.primaryImage.url }}{% endraw %}" />
-                <img ng-if="!item.primaryImage.url" alt="{% raw %}{{ item.name }}{% endraw %}" class="img-fluid border-0 p-0" ng-src="{{ 'no-image.svg' | asset_url }}" />
+                <img ng-if="item.primaryImage.url" alt="{% raw %}{{ item.localizedName }}{% endraw %}" class="img-fluid border-0 p-0" ng-src="{% raw %}{{ item.primaryImage.url }}{% endraw %}" />
+                <img ng-if="!item.primaryImage.url" alt="{% raw %}{{ item.localizedName }}{% endraw %}" class="img-fluid border-0 p-0" ng-src="{{ 'no-image.svg' | asset_url }}" />
             </div>
             <div class="col-9">
-                <span ng-class="{ 'font-weight-bold': dialogData.selectedItemId === item.id }" ng-bind="item.name"></span>
+                <span ng-class="{ 'font-weight-bold': dialogData.selectedItemId === item.id }" ng-bind="item.localizedName"></span>
                 <div>
                     <span class="fs-13 text-muted">Your price:</span> <span ng-bind="item.price.actualPrice.formattedAmount" class="font-weight-bold"></span>
                 </div>

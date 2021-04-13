@@ -15,7 +15,10 @@ function searchBarController($scope, $q, catalogService) {
       var searchCriteria = { keyword: $ctrl.query, start: 0, isFuzzySearch: true };
       return $q.all([
           catalogService.searchCategories(angular.extend({}, searchCriteria, { pageSize: $ctrl.categoryLimit })),
-          catalogService.search(angular.extend({}, searchCriteria, { pageSize: $ctrl.productLimit }))
+          catalogService.search(angular.extend({}, searchCriteria, {
+              responseGroup: 'ItemProperties',
+              pageSize: $ctrl.productLimit,
+          }))
       ]).then(function (results) {
           var process = function (within) {
               return (results[0].data[within] || results[1].data[within]).map(function (suggestion) {
