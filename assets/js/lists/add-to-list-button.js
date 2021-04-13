@@ -6,13 +6,13 @@ function addToListButtonController(accountApi, dialogService, listsApi, customer
 			}
 
 			function compareProductInLists() {
-				$ctrl.buttonInvalid = true;
                 listsApi.searchLists({
 					pageSize: 10000,
 					type: $ctrl.type
 				}).then(function (response) {
 					$ctrl.lists = response.data.results;
 
+                    $ctrl.buttonInvalid = !$ctrl.selectedVariation.canBeOrderedSeparately;
 					if ($ctrl.lists) {
 						var nameLists = _.pluck($ctrl.lists, 'name');
 						listsApi.getListsWithProduct($ctrl.selectedVariation.id, nameLists, $ctrl.type).then(function(containsResponse) {
