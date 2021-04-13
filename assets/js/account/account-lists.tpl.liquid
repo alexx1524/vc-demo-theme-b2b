@@ -66,7 +66,7 @@
                             <tbody>
                                 <tr ng-repeat="lineItem in $ctrl.accountLists.selectedList.items">
                                     <td class="col-xs-2 col-md-1">
-                                        <img class="img-responsive" alt="{% raw %}{{ lineItem.name }}{% endraw %}" ng-src="{% raw %}{{ lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-if="lineItem.imageUrl" />
+                                        <img class="img-responsive" alt="{% raw %}{{ lineItem.localizedName }}{% endraw %}" ng-src="{% raw %}{{ lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-if="lineItem.imageUrl" />
                                     </td>
                                     <td>
                                         <a href="" ng-click="$ctrl.accountLists.removeLineItem(lineItem, $ctrl.accountLists.selectedList)">
@@ -75,7 +75,7 @@
                                     </td>
                                     <td>
                                         <div class="lists-productsList-descr-contentAllign">
-                                            <a class="lists-productsList-descr-title product-list-advanced" ng-bind="lineItem.name" href="{% raw %}{{ 'product/' + lineItem.productId }}{% endraw %}"></a>
+                                            <a class="lists-productsList-descr-title product-list-advanced" ng-bind="lineItem.localizedName" href="{% raw %}{{ 'product/' + lineItem.productId }}{% endraw %}"></a>
                                         </div>
                                         <div ng-if="!lineItem.modifiedBy" ng-bind="'Added '+ (lineItem.createdDate | date:'MMMM d, y')"
                                             class="lists-productsList-descr-modify">

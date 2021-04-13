@@ -17,7 +17,7 @@
                     </li>
                 {% endfor %}
             {% endif %}
-            <li class="breadcrumb-item active">{{ product.title }}</li>
+            <li class="breadcrumb-item active">{{ product.localized_name }}</li>
         {% elsif template contains 'collection' and collection.handle %}
             {% if current_tags %}
                 <li class="breadcrumb-item">

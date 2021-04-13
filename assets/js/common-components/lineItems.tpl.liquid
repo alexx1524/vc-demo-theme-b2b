@@ -11,10 +11,10 @@
     <tbody ng-repeat="group in $ctrl.order.configuredGroups" class="order-line-item">
         <tr>
             <td ng-class="$ctrl.hideReorder ? 'col-xs-1' : 'col-xs-2'">
-                <img class="img-responsive" alt="{% raw %}{{ group.product.name }}{% endraw %}" ng-src="{% raw %}{{ group.product.primaryImage.url }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+                <img class="img-responsive" alt="{% raw %}{{ group.product.localizedName }}{% endraw %}" ng-src="{% raw %}{{ group.product.primaryImage.url }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
             </td>
             <td class="col-xs-6">
-                <a ng-bind="group.product.name" class="text-bold" href="{% raw %}{{ group.product.url.replace(regex, baseUrl) }}{% endraw %}"></a>
+                <a ng-bind="group.product.localizedName" class="text-bold" href="{% raw %}{{ group.product.url.replace(regex, baseUrl) }}{% endraw %}"></a>
                 <p class="d-flex mt-1">
                     <img class="img-responsive mr-2" src="{{ 'customize.svg' | asset_url }}" />
                     <a ng-bind="$ctrl.getToggleTitle(group)" ng-click="$ctrl.toggleConfiguration(group)" class="cursor-pointer font-weight-400 font-size-13"></a>
@@ -61,10 +61,10 @@
                         <tbody>
                             <tr ng-repeat="part in group.items" class="border-bottom-light">
                                 <td class="text-center" ng-class="$ctrl.hideReorder ? 'col-xs-1' : 'col-xs-2'">
-                                    <img class="img-responsive" alt="{% raw %}{{ part.name }}{% endraw %}" ng-src="{% raw %}{{ part.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+                                    <img class="img-responsive" alt="{% raw %}{{ part.localizedName }}{% endraw %}" ng-src="{% raw %}{{ part.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
                                 </td>
                                 <td>
-                                    <a class="font-weight-400" ng-href="{% raw %}{{ part.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="part.name"></a>
+                                    <a class="font-weight-400" ng-href="{% raw %}{{ part.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="part.localizedName"></a>
                                 </td>
                                 <td ng-bind="part.quantity" class="text-center"></td>
                             {% if settings.show_prices_with_taxes %}

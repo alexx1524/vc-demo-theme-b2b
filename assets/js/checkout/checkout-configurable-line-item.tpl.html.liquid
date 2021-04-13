@@ -1,10 +1,10 @@
 <div class="d-flex flex-column">
     <div class="d-flex align-items-center">
         <div class="col-xs-2 col-md-1 align-self-start">
-            <img class="img-responsive" alt="{% raw %}{{ $ctrl.item.product.name }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.item.product.primaryImage.url }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+            <img class="img-responsive" alt="{% raw %}{{ $ctrl.item.product.localizedName }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.item.product.primaryImage.url }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
         </div>
         <div class="col-xs-4 col-md-4">
-            <p><span ng-bind="$ctrl.item.product.name" class="text-bold"></span></p>
+            <p><span ng-bind="$ctrl.item.product.localizedName" class="text-bold"></span></p>
             <p><span class="text-bold">{{ 'checkout.item' | t }}</span> <span ng-bind="$ctrl.item.product.sku"></span></p>
             <p>
                 <span class="text-bold">{{ 'checkout.price' | t }}</span>
@@ -74,7 +74,7 @@
                                     <img class="img-responsive" alt="{% raw %}{{ part.name }}{% endraw %}" ng-src="{% raw %}{{ part.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
                                 </td>
                                 <td>
-                                    <a ng-href="{% raw %}{{ part.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="part.name" class="text-bold"></a>
+                                    <a ng-href="{% raw %}{{ part.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="part.localizedName" class="text-bold"></a>
                                     <p class="margin-0">
                                         <span class="text-bold">{{ 'checkout.price' | t }}</span>
                                         {% if settings.show_prices_with_taxes %}
