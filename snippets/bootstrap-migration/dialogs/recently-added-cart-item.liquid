@@ -18,10 +18,10 @@
                 <tbody>
                     <tr ng-repeat="item in dialogData.items" class="d-flex align-items-center border-top border-gray-200">
                         <td class="col-2 py-4 border-0">
-                            <img class="img-fluid" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-src="{% raw %}{{ item.primaryImage.url }}{% endraw %}" alt="{% raw %}{{ item.name }}{% endraw %}">
+                            <img class="img-fluid" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-src="{% raw %}{{ item.primaryImage.url }}{% endraw %}" alt="{% raw %}{{ item.localizedName }}{% endraw %}">
                         </td>
                         <td class="col-6 py-4 border-0">
-                            <a ng-href="{% raw %}{{ item.url.replace(regex, baseUrl) }}{% endraw %}" class="font-weight-bold" ng-bind="item.name"></a>
+                            <a ng-href="{% raw %}{{ item.url.replace(regex, baseUrl) }}{% endraw %}" class="font-weight-bold" ng-bind="item.localizedName"></a>
                             <p ng-if="dialogData.inventoryError && item.inventoryError" class="mb-0 mt-2"><i class="fa fa-exclamation-circle fa-lg text-primary" aria-hidden="true"></i> <span class="small">Reduced quantity of products due to stock restrictions</span></p>
                         </td>
                         <td class="col-2 text-center border-0">

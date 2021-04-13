@@ -39,10 +39,10 @@
         <table class="table mb-0">
             <tr class="d-flex align-items-center">
                 <td class="col-2 border-0">
-                    <img class="img-fluid" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-src="{% raw %}{{ dialogData.product.primaryImage.url }}{% endraw %}" alt="{% raw %}{{ dialogData.product.name }}{% endraw %}">
+                    <img class="img-fluid" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-src="{% raw %}{{ dialogData.product.primaryImage.url }}{% endraw %}" alt="{% raw %}{{ dialogData.product.localizedName }}{% endraw %}">
                 </td>
                 <td class="col-6 border-0">
-                    <a ng-bind="dialogData.product.name"></a>
+                    <a ng-bind="dialogData.product.localizedName"></a>
                 </td>
                 <td class="col-2 border-0">
                     <div ng-bind="dialogData.quantity"></div>

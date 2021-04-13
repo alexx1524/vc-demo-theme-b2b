@@ -4,7 +4,7 @@
             <div class="col-md-6 d-flex align-items-center" itemscope itemtype="http://schema.org/Organization">
                 {% include 'bootstrap-migration/main/header/links/brand' %}
                 {% if current_user.contact.organization.name %}
-                    <div class="text-uppercase font-weight-bold text-white pl-3 border-left border-primary border-2">{{current_user.contact.organization.name}}</div>
+                    <div class="text-uppercase font-weight-bold pl-3 border-left border-primary border-2">{{current_user.contact.organization.name}}</div>
                 {% endif %}
             </div>
             <div class="col-md-6 navbar-text text-right">
