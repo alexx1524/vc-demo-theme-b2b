@@ -13,7 +13,7 @@
         <tbody>
             <tr ng-repeat="lineItem in order.items">
                 <td>
-                    <a ng-href="{% raw %}{{ 'product/' + lineItem.productId }}{% endraw %}" ng-bind="lineItem.name"></a>
+                    <a ng-href="{% raw %}{{ 'product/' + lineItem.productId }}{% endraw %}" ng-bind="lineItem.localizedName"></a>
                     <div class="note" ng-if="lineItem.fulfillment" ng-cloak>
                         {% assign created_at_date = line_item.fulfillment.created_at | date: 'month_day_year' %}
                         {{ 'customer.order.fulfilled_on' | t: created_at_date }}

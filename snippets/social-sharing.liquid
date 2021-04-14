@@ -4,7 +4,7 @@
 
 {% elsif template contains 'product' %}
   {% capture permalinkURL %}{{ product.url | absolute_url }}{% endcapture %}
-  {% capture shareTitle %}{{ product.title }}{% endcapture %}
+  {% capture shareTitle %}{{ product.localized_name }}{% endcapture %}
 {% endif %}
 
 {% assign shareButtonStyle = settings.social_sharing_style %}

@@ -13,7 +13,7 @@
     <div class="product-page clearfix" itemscope itemtype="http://schema.org/Product">
         <meta itemprop="url" content="{{ product.url | absolute_url}}">
 
-        <h1>{{ product.title }}</h1>
+        <h1>{{ product.localized_name }}</h1>
         <p>6 products found with these common attributes: {{ product.selected_variant }}</p>
         <p>Narrow your results by</p>
 
@@ -130,7 +130,7 @@
                                             <div class="col-md-5">
                                                 <div>{{ product.metafields.properties['Brand'] }}</div>
                                                 <a href="{{ product_url }}">
-                                                    {{ variant.title }}
+                                                    {{ variant.localized_name }}
                                                 </a>
                                                 <div>
                                                     {{ 'products.product.sku' | t }}&nbsp;<a href="{{ product_url }}">{{ variant.sku }}</a>
