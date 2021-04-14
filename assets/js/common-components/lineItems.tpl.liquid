@@ -82,10 +82,10 @@
     <tbody>
         <tr ng-repeat="lineItem in $ctrl.order.usualItems" class="order-line-item">
             <td ng-class="$ctrl.hideReorder ? 'col-xs-1' : 'col-xs-2'">
-                <img class="img-responsive" alt="{% raw %}{{ lineItem.name }}{% endraw %}" ng-src="{% raw %}{{ lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+                <img class="img-responsive" alt="{% raw %}{{ lineItem.localizedName }}{% endraw %}" ng-src="{% raw %}{{ lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
             </td>
             <td>
-                <a ng-bind="lineItem.name" class="text-bold" href="{% raw %}{{$ctrl.getProductLink(lineItem.productId)}}{% endraw %}"></a>
+                <a ng-bind="lineItem.localizedName" class="text-bold" href="{% raw %}{{$ctrl.getProductLink(lineItem.productId)}}{% endraw %}"></a>
                 {% if shop.subscription_enabled %}
                 <p ng-if="lineItem.paymentPlan">
                     <span ng-bind="'Subscription with a period: ' + lineItem.paymentPlan.intervalCount + ' ' + lineItem.paymentPlan.interval"></span>

@@ -21,7 +21,7 @@
                             <img class="img-responsive" fallback-src="{{ 'no-image.svg' | asset_url }}" ng-src="{% raw %}{{ item.primaryImage.url }}{% endraw %}">
                         </td>
                         <td class="col-md-7 py-4">
-                            <a ng-href="{% raw %}{{ item.url.replace(regex, baseUrl) }}{% endraw %}" class="text-bold" ng-bind="item.name"></a>
+                            <a ng-href="{% raw %}{{ item.url.replace(regex, baseUrl) }}{% endraw %}" class="text-bold" ng-bind="item.localizedName"></a>
                             <p ng-if="dialogData.inventoryError && item.inventoryError" class="mb-0 mt-2"><i class="fa fa-exclamation-circle fa-lg text-primary" aria-hidden="true"></i> <span class="small">Reduced quantity of products due to stock restrictions</span></p>
                         </td>
                         <td class="text-center col-md-2">
