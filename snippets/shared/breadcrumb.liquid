@@ -14,7 +14,7 @@
                     </li>
                 {% endfor %}
             {% endif %}
-            <li class="active">{{ product.title }}</li>
+            <li class="active">{{ product.localized_name }}</li>
         {% elsif template contains 'collection' and collection.handle %}
             {% if current_tags %}
                 {% capture url %}{{ collection.handle | absolute_url }}{% endcapture %}
@@ -81,7 +81,7 @@
         {% elsif template contains 'page' %}
             <li class="active">{{ page.title }}</li>
         {% elsif template contains 'fulfillment' %}
-            <li class="active">{{ fulfillment_center.name }}</li>    
+            <li class="active">{{ fulfillment_center.name }}</li>
         {% else %}
             <li class="active">{{ page_title }}</li>
         {% endif %}

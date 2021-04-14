@@ -1,9 +1,9 @@
 <div ng-if="!$ctrl.readOnly" class="d-flex align-items-center">
     <div class="col-xs-2 col-md-1 align-self-start">
-        <img class="img-responsive" alt="{% raw %}{{ lineItem.name }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+        <img class="img-responsive" alt="{% raw %}{{ lineItem.localizedName }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
     </div>
     <div class="col-xs-4 col-md-4">
-        <p><a ng-href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.name" class="text-bold"></a></p>
+        <p><a ng-href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.localizedName" class="text-bold"></a></p>
         <p><span class="text-bold">{{ 'checkout.item' | t }}</span> <span ng-bind="$ctrl.lineItem.sku"></span></p>
         <p>
             <span class="text-bold">{{ 'checkout.price' | t }}</span>
@@ -45,10 +45,10 @@
 </div>
 <div ng-if="$ctrl.readOnly" class="d-flex align-items-center">
     <div class="col-xs-2 col-md-1 align-self-start">
-        <img class="img-responsive" alt="{% raw %}{{ $ctrl.lineItem.name }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
+        <img class="img-responsive" alt="{% raw %}{{ $ctrl.lineItem.localizedName }}{% endraw %}" ng-src="{% raw %}{{ $ctrl.lineItem.imageUrl }}{% endraw %}" fallback-src="{{ 'no-image.svg' | asset_url }}" />
     </div>
     <div class="col-xs-4 col-md-4">
-        <p><a href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.name" class="text-bold"></a></p>
+        <p><a href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.localizedName" class="text-bold"></a></p>
         <p class="text-bold">{{ 'checkout.item' | t }} <strong ng-bind="$ctrl.lineItem.sku"></strong></p>
         <p>
             <span class="text-bold">{{ 'checkout.price' | t }}</span>

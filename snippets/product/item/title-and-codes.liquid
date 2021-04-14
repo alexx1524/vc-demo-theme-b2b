@@ -2,7 +2,7 @@
 <div class="text-uppercase">{{ product.properties['Brand'].value }}
 </div>
 <p>
-    <a class="text-truncate" href="{{ product_url | append: '?resp_group=' | append: response_group }}">{{ product.title }}</a><br>
+    <a class="text-truncate" href="{{ product_url | append: '?resp_group=' | append: response_group }}">{{ product.localized_name }}</a><br>
     <strong>{{ 'products.product.sku' | t }}</strong>&nbsp;<a href="{{ product_url| append: '?resp_group=' | append: response_group }}">{{ product.sku }}</a><br>
     <strong>{{ 'products.product.mmn' | t }}</strong>&nbsp;{{ product.properties['MMN'].value }}
 </p>
