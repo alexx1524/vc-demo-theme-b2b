@@ -9,7 +9,7 @@
                 <div class="col-md-6">
                     <div ng-class="{'has-error': (detailForm.first_name.$dirty || detailForm.$submitted) && detailForm.first_name.$invalid }">
                         <label for="first_name" class="form-label required">{{ 'customer.edit_profile.first_name' | t }}</label>
-                        <input ng-model="$ctrl.member.firstName" name="first_name" placeholder="{{ 'customer.edit_profile.first_name' | t }}" class="form-control" required></input>
+                        <input ng-model="$ctrl.member.firstName" name="first_name" placeholder="{{ 'customer.edit_profile.first_name' | t }}" class="form-control" required readonly></input>
                         <span class="help-block text-danger" ng-if="(detailForm.first_name.$dirty || detailForm.$submitted) && detailForm.first_name.$error.required" ng-bind="'{{ 'common.required' | t }}'"></span>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div ng-class="{'has-error': (detailForm.last_name.$dirty || detailForm.$submitted) && detailForm.last_name.$invalid }">
                         <label for="last_name" class="form-label required">{{ 'customer.edit_profile.last_name' | t }}</label>
-                        <input ng-model="$ctrl.member.lastName" name="last_name" placeholder="{{ 'customer.edit_profile.last_name' | t }}" class="form-control" required></input>
+                        <input ng-model="$ctrl.member.lastName" name="last_name" placeholder="{{ 'customer.edit_profile.last_name' | t }}" class="form-control" required readonly></input>
                         <span class="help-block text-danger" ng-if="(detailForm.last_name.$dirty || detailForm.$submitted) && detailForm.last_name.$error.required" ng-bind="'{{ 'common.required' | t }}'"></span>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="col-md-6">
                     <div>
                         <label for="title" class="form-label">{{ 'customer.register.job_title' | t }}</label>
-                        <input ng-model="$ctrl.member.title" type="text" name="title" placeholder="{{ 'customer.register.job_title_placeholder' | t }}" class="form-control"></input>
+                        <input ng-model="$ctrl.member.title" type="text" name="title" placeholder="{{ 'customer.register.job_title_placeholder' | t }}" class="form-control" readonly></input>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" ng-disabled="$ctrl.loader.isLoading" ng-class="{ 'btn--disabled': detailForm.$pristine, 'loading': $ctrl.loader.isLoading }">
+        <button class="btn btn-primary" ng-disabled="true" ng-class="{ 'btn--disabled': detailForm.$pristine, 'loading': $ctrl.loader.isLoading }">
             <span class="btn-text">{{ 'customer.edit_profile.submit' | t }}</span>
             <span class="btn-loading"></span>
         </button>
