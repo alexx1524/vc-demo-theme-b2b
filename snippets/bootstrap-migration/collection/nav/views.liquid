@@ -2,8 +2,8 @@
     <ul class="nav nav-pills views"
         vc-query-target="$collection.viewQuery">
         <li class="nav-item">
-            <a class="nav-link"
-               ng-class="{'active': $collection.viewQuery.view[0] === 'list'}"
+            <a class="btn"
+               ng-class="[$collection.viewQuery.view[0] === 'list' ? 'btn-primary': 'btn-outline-primary']"
                title="{{ 'collections.general.list_view' | t }}"
                vc-query-source="{ view: ['list'] }"
                switchable="false">
@@ -12,8 +12,8 @@
             </a>
         </li>
         <li class="nav-item ml-1">
-            <a class="nav-link"
-               ng-class="{'active': $collection.viewQuery.view[0] === 'grid'}"
+            <a class="btn"
+               ng-class="[$collection.viewQuery.view[0] === 'grid' ? 'btn-primary': 'btn-outline-primary']"
                title="{{ 'collections.general.grid_view' | t }}"
                vc-query-source="{ view: ['grid'] }"
                switchable="false">
