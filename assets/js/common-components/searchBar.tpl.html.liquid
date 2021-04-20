@@ -1,4 +1,4 @@
-<form class="navbar-form navbar-form-justify" method="get" action="{{ '/search' | absolute_url }}" role="search" autocomplete="off">
+<form class="navbar-form navbar-form-justify mt-2 pt-1" method="get" action="{{ '/search' | absolute_url }}" role="search" autocomplete="off">
     <div class="input-group" uib-dropdown is-open="$ctrl.hasHint" dropdown-append-to-body="true">
         <input type="search" name="q" class="form-control" ng-model="$ctrl.query" placeholder="{% raw %}{{ $ctrl.placeholder }}{% endraw %}"
                uib-typeahead="suggestion as suggestion.localizedName for suggestion in $ctrl.getSuggestions()" typeahead-is-open="$ctrl.isOpen" typeahead-wait-ms="100" typeahead-loading="$ctrl.isSearching" typeahead-no-results="$ctrl.hasNoResults"

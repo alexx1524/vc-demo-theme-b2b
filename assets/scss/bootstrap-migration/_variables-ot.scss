@@ -27,6 +27,7 @@ $breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/200
 $yiq-contrasted-threshold: 200;
 
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-condensed:  "Roboto", Arial, sans-serif;
 $font-size-base: 0.875rem;
 $font-size-sm: $font-size-base * .85;
 $font-size-lg: $font-size-base;
@@ -36,7 +37,7 @@ $line-height-lg: 1.428571429;
 
 $small-font-size: 85%;
 
-$headings-font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: $font-family-condensed;
 $headings-font-weight: $font-weight-bold;
 $h1-font-size: $font-size-base * 2.428571429;
 $h2-font-size: $font-size-base * 1.75;
@@ -46,7 +47,7 @@ $h5-font-size: $font-size-base;
 $h6-font-size: $font-size-base * 0.85;
 
 $link-color: #0066cc;
-$link-decoration: underline;
+$link-decoration: none;
 $link-hover-decoration: none;
 $link-font-weight: 500;
 
@@ -88,7 +89,7 @@ $custom-checkbox-indicator-border-radius: 0.125rem;
 
 $btn-border-width: 1px;
 $btn-height-border: $btn-border-width * 2;
-$btn-font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$btn-font-family: "Roboto", Arial, sans-serif;
 //$btn-font-weight: $font-weight-bold;
 $btn-box-shadow: false;
 $btn-padding-y: $input-padding-y;
