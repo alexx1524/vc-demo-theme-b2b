@@ -68,6 +68,12 @@
                                 <div class="row flexible mr-0 border-bottom-light" ng-repeat="lineItem in checkout.cart.usualItems">
                                     <vc-checkout-line-item line-item="lineItem" on-change-qty="changeItemQty(lineItem)" on-remove="removeItem(lineItem)"></vc-checkout-line-item>
                                 </div>
+
+                                <div class="my-5">
+                                    <label>{{ 'cart.general.note' | t }}</label><br>
+                                    <textarea ng-model="checkout.cart.comment" class="form-control" style="width:80%"></textarea>
+                                </div>
+
                                 <div ng-show="relatedProducts.item.count" class="row">
                                     <div class="col-xs-12">
                                         <p class="text-center"><strong>If you changed multiple quantities, </strong><a href="" ng-click="changeItemAllQty()">Update All</a></p>
@@ -82,7 +88,7 @@
                         </div>
                         <div class="hidden-xs hidden-sm col-md-3">
                             <p ng-if="customer && customer.isRegisteredUser" ng-cloak >
-                                <button class="btn btn-lg btn-block btn-primary" type="button" ng-disabled="checkout.loading || checkout.cart.outOfStockError" ng-click="checkout.wizard.nextStep()">
+                                <button class="btn btn-lg btn-block btn-primary" type="button" ng-disabled="checkout.loading || checkout.cart.outOfStockError" ng-click="goToReview()">
                                     {{ 'cart.general.checkout' | t }}
                                 </button>
                             <p ng-if="customer && !customer.isRegisteredUser" ng-cloak >
@@ -297,6 +303,10 @@
                                     </div>
                                     <div class="row flexible mr-0 border-bottom-light" ng-repeat="lineItem in checkout.cart.usualItems">
                                         <vc-checkout-line-item line-item="lineItem" ></vc-checkout-line-item>
+                                    </div>
+                                    <div class="my-5">
+                                        <label>{{ 'cart.general.note' | t }}</label><br>
+                                        <textarea readonly ng-bind="checkout.cart.comment" class="form-control" style="width:80%"></textarea>
                                     </div>
                                 </div>
                             </div>
