@@ -666,7 +666,7 @@
             "login_page_text": "Login page"
         },
         "edit_profile": {
-            "title": "Edit Profile",
+            "title": "Profile",
             "first_name": "First Name",
             "last_name": "Last Name",
             "email": "Email",
