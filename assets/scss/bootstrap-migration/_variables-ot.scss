@@ -22,7 +22,8 @@ $gray-modal-bg: #f8f8f8;
 $gray-modal-border: #e5e5e5;
 
 $breadcrumb-active-color: $primary;
-$breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/%3E%3C/svg%3E");
+$breadcrumb-divider: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.193 9.986L7.17995 17L6.00195 15.822L11.835 9.986L6.00195 4.153L7.17995 2.975L14.193 9.986Z" fill="#737373"/></svg>');
+$breadcrumb-item-padding: .25rem;
 
 $yiq-contrasted-threshold: 200;
 

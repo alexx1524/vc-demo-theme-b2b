@@ -1,8 +1,8 @@
 {% unless template == 'index' or template == 'cart' %}
-    <ol class="pull-left breadcrumb pl-0" role="navigation" aria-label="breadcrumb">
+    <ol class="pull-left breadcrumb pl-0 py-0" role="navigation" aria-label="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ "" | absolute_url }}" class="text-dark text-decoration-none" title="{{ 'general.breadcrumbs.home_link_title' | t }}">
-                <i class="fa fa-lg fa-home text-primary" aria-hidden="true"></i>
+                <img src="{{ 'real-estate-star.svg' | asset_url }}" alt="{{ 'general.breadcrumbs.home_link_title' | t }}" style="vertical-align: text-top;">
             </a>
         </li>
         {% if template contains 'vendor' %}
@@ -16,6 +16,11 @@
                         </a>
                     </li>
                 {% endfor %}
+                <li class="breadcrumb-item">
+                    <a href="{{ collection.handle | absolute_url }}" class="text-dark text-decoration-none">
+                        {{ collection.title }}
+                    </a>
+                </li>
             {% endif %}
             <li class="breadcrumb-item active">{{ product.localized_name }}</li>
         {% elsif template contains 'collection' and collection.handle %}
@@ -59,18 +64,15 @@
             {% else %}
                 {% if collection %}
                     {% for parent in collection.parents %}
-                        {% if for.last == true %}
-                            <li class="breadcrumb-item active">
+                        <li class="breadcrumb-item">
+                            <a href="{{ parent.handle | absolute_url }}" class="text-dark text-decoration-none">
                                 {{ parent.title }}
-                            </li>
-                        {% else %}
-                            <li class="breadcrumb-item">
-                                <a href="{{ parent.handle | absolute_url }}" class="text-dark text-decoration-none">
-                                    {{ parent.title }}
-                                </a>
-                            </li>
-                        {% endif %}
+                            </a>
+                        </li>
                     {% endfor %}
+                    <li class="breadcrumb-item active">
+                        {{ collection.title }}
+                    </li>
                 {% endif %}
             {% endif %}
         {% elsif template == 'blog' %}
