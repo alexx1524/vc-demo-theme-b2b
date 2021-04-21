@@ -681,6 +681,7 @@
             "new_password_confirm": "Confirm New Password",
             "submit": "Change password",
             "changed": "Password was changed successfully!",
+            "message": "Password changes can only be made in the OMNITRACKER Self-Service Portal",
             "validation": {
                 "current_password": "Required",
                 "new_password": "Old and new passwords are the same!",
