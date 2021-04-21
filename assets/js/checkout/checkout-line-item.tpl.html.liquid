@@ -4,13 +4,13 @@
     </div>
     <div class="col-xs-4 col-md-4">
         <p><a ng-href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.localizedName" class="text-bold"></a></p>
-        <p><span class="text-bold">{{ 'checkout.item' | t }}</span> <span ng-bind="$ctrl.lineItem.sku"></span></p>
+        <p><span class="text-gray-totals">{{ 'checkout.item' | t }} #</span><span ng-bind="$ctrl.lineItem.sku"></span></p>
         <p>
-            <span class="text-bold">{{ 'checkout.price' | t }}</span>
+            <span class="mr-5">{{ 'checkout.price' | t }}</span>
             {% if settings.show_prices_with_taxes %}
-            <strong ng-bind="$ctrl.lineItem.placedPriceWithTax.formattedAmount" class="text-green"></strong>
+            <span ng-bind="$ctrl.lineItem.placedPriceWithTax.formattedAmount" class="text-green"></span>
             {% else %}
-            <strong ng-bind="$ctrl.lineItem.placedPrice.formattedAmount" class="text-green"></strong>
+            <span ng-bind="$ctrl.lineItem.placedPrice.formattedAmount" class="text-green"></span>
             {% endif %}
             <span>/ each</span>
         </p>
@@ -49,13 +49,13 @@
     </div>
     <div class="col-xs-4 col-md-4">
         <p><a href="{% raw %}{{ $ctrl.lineItem.product.url.replace(regex, baseUrl) }}{% endraw %}" ng-bind="$ctrl.lineItem.localizedName" class="text-bold"></a></p>
-        <p class="text-bold">{{ 'checkout.item' | t }} <strong ng-bind="$ctrl.lineItem.sku"></strong></p>
+        <p class="text-gray-totals">{{ 'checkout.item' | t }} #<span ng-bind="$ctrl.lineItem.sku"></span></p>
         <p>
-            <span class="text-bold">{{ 'checkout.price' | t }}</span>
+            <span class="mr-5">{{ 'checkout.price' | t }}</span>
             {% if settings.show_prices_with_taxes %}
-            <strong ng-bind="$ctrl.lineItem.placedPriceWithTax.formattedAmount" class="text-green"></strong>
+            <span ng-bind="$ctrl.lineItem.placedPriceWithTax.formattedAmount" class="text-green"></span>
             {% else %}
-            <strong ng-bind="$ctrl.lineItem.placedPrice.formattedAmount" class="text-green"></strong>
+            <span ng-bind="$ctrl.lineItem.placedPrice.formattedAmount" class="text-green"></span>
             {% endif %}
             <span>/ each</span>
         </p>

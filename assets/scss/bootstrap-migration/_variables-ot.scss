@@ -22,11 +22,13 @@ $gray-modal-bg: #f8f8f8;
 $gray-modal-border: #e5e5e5;
 
 $breadcrumb-active-color: $primary;
-$breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/%3E%3C/svg%3E");
+$breadcrumb-divider: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.193 9.986L7.17995 17L6.00195 15.822L11.835 9.986L6.00195 4.153L7.17995 2.975L14.193 9.986Z" fill="#737373"/></svg>');
+$breadcrumb-item-padding: .25rem;
 
 $yiq-contrasted-threshold: 200;
 
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-condensed:  "Roboto", Arial, sans-serif;
 $font-size-base: 0.875rem;
 $font-size-sm: $font-size-base * .85;
 $font-size-lg: $font-size-base;
@@ -36,7 +38,7 @@ $line-height-lg: 1.428571429;
 
 $small-font-size: 85%;
 
-$headings-font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: $font-family-condensed;
 $headings-font-weight: $font-weight-bold;
 $h1-font-size: $font-size-base * 2.428571429;
 $h2-font-size: $font-size-base * 1.75;
@@ -46,7 +48,7 @@ $h5-font-size: $font-size-base;
 $h6-font-size: $font-size-base * 0.85;
 
 $link-color: #0066cc;
-$link-decoration: underline;
+$link-decoration: none;
 $link-hover-decoration: none;
 $link-font-weight: 500;
 
@@ -88,7 +90,7 @@ $custom-checkbox-indicator-border-radius: 0.125rem;
 
 $btn-border-width: 1px;
 $btn-height-border: $btn-border-width * 2;
-$btn-font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$btn-font-family: "Roboto", Arial, sans-serif;
 //$btn-font-weight: $font-weight-bold;
 $btn-box-shadow: false;
 $btn-padding-y: $input-padding-y;

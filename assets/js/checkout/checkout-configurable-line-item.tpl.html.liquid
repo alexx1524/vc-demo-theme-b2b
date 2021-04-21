@@ -5,13 +5,13 @@
         </div>
         <div class="col-xs-4 col-md-4">
             <p><span ng-bind="$ctrl.item.product.localizedName" class="text-bold"></span></p>
-            <p><span class="text-bold">{{ 'checkout.item' | t }}</span> <span ng-bind="$ctrl.item.product.sku"></span></p>
+            <p><span class="text-gray-totals">{{ 'checkout.item' | t }} #</span><span ng-bind="$ctrl.item.product.sku"></span></p>
             <p>
-                <span class="text-bold">{{ 'checkout.price' | t }}</span>
+                <span class="mr-5">{{ 'checkout.price' | t }}</span>
                 {% if settings.show_prices_with_taxes %}
-                    <span ng-bind="$ctrl.item.placedPriceWithTax.formattedAmount" class="text-bold text-green"></span>
+                    <span ng-bind="$ctrl.item.placedPriceWithTax.formattedAmount" class="text-green"></span>
                 {% else %}
-                    <span ng-bind="$ctrl.item.placedPrice.formattedAmount" class="text-bold text-green"></span>
+                    <span ng-bind="$ctrl.item.placedPrice.formattedAmount" class="text-green"></span>
                 {% endif %}
                 <span>/ each</span>
             </p>

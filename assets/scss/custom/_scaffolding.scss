@@ -5,7 +5,7 @@ a {
   &:not(.btn),
   &.btn.btn-link {
     font-family: $font-family-sans-serif;
-    font-weight: $link-font-weight;
+    //font-weight: $link-font-weight;
     //border-bottom: 1px solid transparent;
     &:hover,
     &:focus {

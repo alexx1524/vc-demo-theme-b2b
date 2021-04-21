@@ -55,10 +55,11 @@
 }
 
 .nav-pills-transparent > li > a {
-  color: $brand-alt;
+  //color: $brand-alt;
   border-left: none;
   padding-left: 0;
   padding-right: 0;
+  font-weight: bold;
   &:focus,
   &:hover {
     background-color: $body-bg;

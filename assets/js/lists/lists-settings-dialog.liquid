@@ -21,10 +21,10 @@
         </div>
         <div class="cart-row product-list-modal-borders product-list-modal-borders">
             <div class="grid-item text-right">
-                <button class="btn" >
-                    <span ng-click="close()">{{ 'wishlist.general.cancel' | t }}</span>
+                <button class="btn btn-alt btn-primary" ng-click="close()">
+                    <span>{{ 'wishlist.general.cancel' | t }}</span>
                 </button>
-                <button class="btn" ng-disabled="!isAnySelected()" ng-click="submitSettings()">
+                <button class="btn btn-primary" ng-disabled="!isAnySelected()" ng-click="submitSettings()">
                     <span>{{ 'Submit' | t }}</span>
                 </button>
             </div>

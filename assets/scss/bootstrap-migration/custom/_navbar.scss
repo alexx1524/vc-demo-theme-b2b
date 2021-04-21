@@ -19,3 +19,17 @@
     background-color: $gray-200;
   }
 }
+
+.nav-link {
+  @include hover-focus() {
+    background-color: #33B2E9;
+
+    &.text-white {
+      color: $white !important;
+    }
+  }
+
+  &:active {
+    background-color: #007FB6;
+  }
+}

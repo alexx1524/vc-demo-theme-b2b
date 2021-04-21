@@ -1,5 +1,5 @@
 <div class="form-group ml-3">
-    <label class="mr-1">{{ 'collections.general.products_per_page' | t }}</label>
+    <label class="mr-1 text-primary">{{ 'collections.general.products_per_page' | t }}</label>
     <ul class="pagination mb-0"
         ng-init="$collection.generatePageSizes({{ settings.product_list_capacity }}, {{ settings.product_list_capacity_steps }})">
         <li class="page-item"

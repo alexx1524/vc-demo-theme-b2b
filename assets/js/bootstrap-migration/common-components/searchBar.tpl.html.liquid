@@ -1,14 +1,16 @@
-<form method="get" action="{{ '/search' | absolute_url }}" role="search" autocomplete="off">
+<form method="get" action="{{ '/search' | absolute_url }}" role="search" autocomplete="off" class="mt-2">
     <div class="input-group" uib-dropdown is-open="$ctrl.hasHint" dropdown-append-to-body="true">
-        <input type="search" name="q" class="form-control h-auto" ng-model="$ctrl.query" placeholder="{% raw %}{{ $ctrl.placeholder }}{% endraw %}"
+        <input type="search" name="q" class="form-control h-auto border-0 shadow-none" ng-model="$ctrl.query" placeholder="{% raw %}{{ $ctrl.placeholder }}{% endraw %}"
                uib-typeahead="suggestion as suggestion.localizedName for suggestion in $ctrl.getSuggestions()" typeahead-is-open="$ctrl.isOpen" typeahead-wait-ms="100" typeahead-loading="$ctrl.isSearching" typeahead-no-results="$ctrl.hasNoResults"
                typeahead-focus-first="false" typeahead-template-url="search-bar-match.tpl" typeahead-popup-template-url="search-bar-popup.tpl" typeahead-append-to-body="true">
         <div class="dropdown-menu" uib-dropdown-menu>
             <a class="dropdown-item disabled" ng-show="$ctrl.isSearching" href="" ng-bind="$ctrl.searching" tabindex="-1" aria-disabled="true"></a>
             <a class="dropdown-item disabled" ng-show="$ctrl.hasNoResults" href="" ng-bind="$ctrl.noResults" tabindex="-1" aria-disabled="true"></a>
         </div>
-        <span class="input-group-append">
-            <button type="submit" class="btn btn-secondary px-3 py-3" ng-bind="$ctrl.submitLabel"></button>
+        <span class="input-group-append bg-white">
+            <button type="submit" class="btn pr-1">
+                <img src="{{ 'search.svg' | asset_url }}" alt="search">
+            </button>
         </span>
     </div>
     <script id="search-bar-match.tpl" type="text/ng-template">

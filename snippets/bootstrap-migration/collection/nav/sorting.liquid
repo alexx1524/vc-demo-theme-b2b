@@ -1,17 +1,17 @@
 <div class="form-group ml-auto">
-    <label class="mr-3">
+    <label class="mr-3 text-primary">
         {{ 'collections.sorting.title' | t }}
     </label>
     <div uib-dropdown
          ng-init="$collection.sortMode = '{{ current_product_search_criteria.sort_by | default: collection.default_sort_by | escape }}'">
         <a id="sort"
-           class="btn btn-outline-dark"
+           class="btn btn-outline-gray-300"
            href=""
            uib-dropdown-toggle>
             {% raw %}
                 <span class="mr-1">{{ $collection.sortModes[$collection.sortMode] | translate }}</span>
             {% endraw %}
-            <i class="fa fa-angle-down font-weight-bold text-primary" aria-hidden="true"></i>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu"
              uib-dropdown-menu

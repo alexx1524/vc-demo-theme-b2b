@@ -8,7 +8,7 @@
   .bulk-order-popover {
     li {
       & > a {
-        color: $secondary;
+        color: $body-color;
         &:hover,
         &:focus {
           color: $body-color;
@@ -45,9 +45,9 @@
 }
 
 #all-products-popover + .popover {
-  max-width: 450px;
+  max-width: 550px;
 }
 
 #bulk-order-popover + .popover {
-  max-width: 305px;
+  max-width: 385px;
 }
