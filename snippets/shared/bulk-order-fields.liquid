@@ -2,10 +2,10 @@
     {% assign end_col_index = column_count | minus: 1 %}
     {% for col_index in (0..end_col_index) %}
         <div class="col-md-{{- sku_grid_column_count -}}">
-            <label class="form-label">{{ 'bulk_order.general.sku_field_header' | t }}</label>
+            <label class="form-label text-primary font-weight-400">{{ 'bulk_order.general.sku_field_header' | t }}</label>
         </div>
         <div class="col-md-{{- quantity_grid_column_count -}}">
-            <label class="form-label">{{ 'bulk_order.general.quantity_field_header' | t }}</label>
+            <label class="form-label text-primary font-weight-400">{{ 'bulk_order.general.quantity_field_header' | t }}</label>
         </div>
     {% endfor %}
 </div>
