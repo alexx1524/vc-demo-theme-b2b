@@ -471,6 +471,16 @@ angular.module(moduleName, ['credit-cards', 'angular.filter'])
                     });
             }
 
+            $scope.goToReview = function() {
+                wrapLoading(function () {
+                    return cartService.updateCartComment(($scope.checkout.cart.comment || '').trim())
+                        .then(function() {
+                            $scope.reloadCart();
+                            $scope.checkout.wizard.nextStep();
+                        });
+                });
+            }
+
             $scope.initialize = function () {
 
                 $scope.reloadCart()
