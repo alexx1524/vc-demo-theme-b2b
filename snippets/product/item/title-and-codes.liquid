@@ -2,7 +2,8 @@
 <div class="text-uppercase">{{ product.properties['Brand'].value }}
 </div>
 <p>
-    <a class="text-truncate" href="{{ product_url | append: '?resp_group=' | append: response_group }}">{{ product.localized_name }}</a><br>
-    <strong>{{ 'products.product.sku' | t }}</strong>&nbsp;<a href="{{ product_url| append: '?resp_group=' | append: response_group }}">{{ product.sku }}</a><br>
-    <strong>{{ 'products.product.mmn' | t }}</strong>&nbsp;{{ product.properties['MMN'].value }}
+    <a class="text-truncate text-body" href="{{ product_url | append: '?resp_group=' | append: response_group }}">{{ product.localized_name }}</a><br>
+    <span class="text-gray-totals">{{ 'products.product.sku' | t }}</span><a class="text-body" href="{{ product_url| append: '?resp_group=' | append: response_group }}">{{ product.sku }}</a><br>
+    <span class="text-gray-totals">{{ 'products.product.mmn' | t }}</span>{{ product.properties['MMN'].value }}<br>
+    <span class="text-gray-totals">UNSPSC #</span><a class="text-body" href="{{ product_url| append: '?resp_group=' | append: response_group }}">{{ product.sku }}</a>
 </p>

@@ -8,7 +8,7 @@
         ng-model="product['{{product.id}}'].quantity"
         >
         <span class="input-group-btn">
-            <button class="btn btn-alt btn-primary"
+            <button class="btn btn-primary"
 
                     title="{{ 'products.general.add_to_cart' | t }}"
                     ng-click="addProductToCartById('{{ product.id }}', product['{{product.id}}'].quantity, $event)"
