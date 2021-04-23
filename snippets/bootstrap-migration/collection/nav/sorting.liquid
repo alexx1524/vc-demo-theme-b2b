@@ -5,7 +5,7 @@
     <div uib-dropdown
          ng-init="$collection.sortMode = '{{ current_product_search_criteria.sort_by | default: collection.default_sort_by | escape }}'">
         <a id="sort"
-           class="btn btn-outline-gray-300"
+           class="btn btn-outline-gray-300 am-sort-button"
            href=""
            uib-dropdown-toggle>
             {% raw %}
@@ -26,3 +26,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    .am-sort-button:hover {
+        background-color: #e5e5e5;
+    }
+</style>
