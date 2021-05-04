@@ -234,7 +234,7 @@
         "general": {
             "title": "Shopping Cart",
             "remove": "Remove",
-            "note": "Special instructions for seller",
+            "note": "Additional comment for your order",
             "price": "Price",
             "quantity": "Quantity",
             "subtotal": "Subtotal",
